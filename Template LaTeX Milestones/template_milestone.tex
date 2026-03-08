@@ -1,0 +1,135 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ceci est le template à utiliser pour les milestones des projets d'INFO0947.            %
+%                                                                                        %
+% Vous devez décommenter et compléter les commandes introduites plus bas (intitule, ...) %
+% avant de pouvoir compiler le fichier LaTeX.                                            %
+%                                                                                        %
+% Le PDF produit doit avoir la forme suivante: grpID_ProjetX_MilestoneY.pdf              %
+% où:                                                                                    %
+%   - grpID est votre identifiant de groupe (cfr. eCampus)                               %
+%   - X est le numéro du projet (1 pour Construction, 2 pour TAD)                        %
+%   - Y est le numéro du milestone (1 ou 2)                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !TEX root = ./main.tex
+% !TEX engine = latexmk -pdf
+% !TEX buildOnSave = true
+\documentclass[a4paper, 11pt, oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{array}
+\usepackage{shortvrb}
+\usepackage{listings}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{graphicx}             % import, scale, and rotate graphics
+\usepackage{subfigure}            % group figures
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{indentfirst}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+
+%%%%%%%%%%%%%%%%% TITRE %%%%%%%%%%%%%%%%
+% Complétez et décommentez les définitions de macros suivantes :
+\newcommand{\intitule}{Analyse ZigZag : Milestone 1}
+\newcommand{\GrNbr}{00} %je ne connaissais pas le numero de mon groupe
+\newcommand{\PrenomUN}{Mathias}
+\newcommand{\NomUN}{Beckers}
+\newcommand{\PrenomDEUX}{Arthur}
+\newcommand{\NomDEUX}{Pirick}
+
+%%%%%%%% ZONE PROTÉGÉE : MODIFIEZ UNE DES DIX PROCHAINES %%%%%%%%
+%%%%%%%%            LIGNES POUR PERDRE 2 PTS.            %%%%%%%%
+\title{INFO0947: \intitule}
+\author{Groupe \GrNbr : \PrenomUN~\textsc{\NomUN}, \PrenomDEUX~\textsc{\NomDEUX}}
+\date{}
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%% FIN DE LA ZONE PROTÉGÉE %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% MILESTONE %%%%%%%%%%%%%%%
+% Écrivez le contenu de votre milestone ci-dessous.
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Production}
+
+Voici les variables que nous utiliserons :
+
+\begin{itemize}
+
+\item \texttt{int i} : variable d'itération de la boucle, avec $0 < i < N$.
+
+\item \texttt{indice\_start\_valide} : indice de début du plus grand segment valide, 
+$0 \le indice\_start\_valide \le N-2$.
+
+\item \texttt{indice\_end\_valide} : indice de fin du plus grand segment valide, 
+$1 \le indice\_end\_valide \le N-1$.
+
+\item \texttt{indice\_start\_tempo} : indice de début du segment actuellement vérifié, 
+$indice\_end\_valide \le indice\_start\_tempo \le N-2$.
+
+\item \texttt{indice\_end\_tempo} : indice de fin du segment actuellement vérifié, 
+$indice\_start\_tempo < indice\_end\_tempo \le N-1$.
+
+\item \texttt{operation\_zigzag} : variable indiquant la relation attendue entre deux
+éléments consécutifs du tableau :
+\begin{itemize}
+\item $0$ : l'élément suivant doit être inférieur au précédent
+\item $1$ : l'élément suivant doit être supérieur au précédent
+\end{itemize}
+
+\end{itemize}
+
+\subsection*{Spécification de la fonction zigzag}
+
+\begin{verbatim}
+/*
+@pre  : T initialisé ^ N > 0 ^ i = 0
+@post : i = N - 1 ^ T inchangé
+*/
+\end{verbatim}
+
+Formalisation :
+
+\[
+\texttt{analyse\_zigzag(int* T, unsigned int N, unsigned int* start, 
+unsigned int* end, unsigned int* length, int* sum)}
+\]
+
+\[
+\forall i, \ 0 \le i \le N-1 :
+\begin{cases}
+T[i] > T[i-1] & \text{si } operation\_zigzag = 1 \\
+T[i] < T[i-1] & \text{si } operation\_zigzag = 0
+\end{cases}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dans cette section, vous rédigez la production demandée pour le milestone.             %
+%                                                                                        %
+% Soyez le plus précis et complet possible.  Toute production ne correspondant pas à ce  %
+% qui est demandé sera considérée comme ``hors sujet'' et la séance de feedback sera     %
+% contreproductive.                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Question(s)}
+%%%%%%%%%%%%%%%%%%%%%%%
+Faut - il écrire dans le programme les predicats intermediaires comme dans la slide 108 du chapitre 2?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dans cette section, vous pouvez rédiger les questions que vous avez sur le projet ou   %
+% formuler ce qui reste incompris pour vous.                                             %
+%                                                                                        %
+% Nous en discuterons lors de la rencontre feedback sur votre production pour le         %
+% milestone                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
