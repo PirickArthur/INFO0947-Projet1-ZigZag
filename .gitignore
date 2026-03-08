@@ -1,1 +1,6 @@
-.vscode
+.vscode/
+
+# Ignore every object files
+*.o
+# Ignore the compiled executable
+zigzag
