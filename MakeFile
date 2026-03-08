@@ -1,0 +1,31 @@
+#MAKEFILE
+#############################
+#
+#projet : INFO947 : Projet 1 : construction de programme
+#Matricules : s2502657,s2506867
+#Auteurs : Beckers Mathias & Pirick Arthur
+#Date : 8 mars 2026
+#
+#############################
+CC=gcc
+CFLAGS=--std=c99 --pedantic -Wall -W -Wmissing-prototypes
+LD=gcc
+LDFLAGS=
+
+EXEC=zigzag
+MODULES=main-zigzag.c zigzag.c
+OBJECTS=main-zigzag.o zigzag.o
+
+all: $(EXEC)
+
+zigzag: $(OBJECTS)
+	$(LD) -o $(EXEC) $(OBJECTS) $(LDFLAGS)
+
+main-zigzag.o: main-zigzag.c
+	$(CC) -c main-zigzag.c -o main-zigzag.o $(CFLAGS)
+
+zigzag.o: zigzag.c
+	$(CC) -c zigzag.c -o zigzag.o $(CFLAGS)
+
+clean:
+	rm -f *.o $(EXEC) *~
