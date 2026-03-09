@@ -1,12 +1,12 @@
 #MAKEFILE
-#############################
-#
-#projet : INFO947 : Projet 1 : construction de programme
-#Matricules : s2502657,s2506867
-#Auteurs : Beckers Mathias & Pirick Arthur
-#Date : 8 mars 2026
-#
-#############################
+###########################################################
+#														  #
+# projet : INFO947 : Projet 1 : construction de programme #
+# Matricules : s2502657,s2506867					      #
+# Auteurs : Beckers Mathias & Pirick Arthur				  #
+# Date : 8 mars 2026									  #
+#								 						  #						  
+###########################################################
 
 CC = gcc
 CFLAGS = --std=c99 --pedantic -Wall -W -Wmissing-prototypes
