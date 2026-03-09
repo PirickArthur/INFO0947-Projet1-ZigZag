@@ -7,17 +7,18 @@
 #Date : 8 mars 2026
 #
 #############################
-CC=gcc
-CFLAGS=--std=c99 --pedantic -Wall -W -Wmissing-prototypes
-LD=gcc
-LDFLAGS=
 
-EXEC=zigzag
-MODULES=main-zigzag.c zigzag.c
-OBJECTS=main-zigzag.o zigzag.o
+CC = gcc
+CFLAGS = --std=c99 --pedantic -Wall -W -Wmissing-prototypes
+LD = gcc
+LDFLAGS =
+
+EXEC = zigzag
+MODULES = main-zigzag.c zigzag.c
+OBJECTS = main-zigzag.o zigzag.o
 
 all: $(EXEC)
-
+	
 zigzag: $(OBJECTS)
 	$(LD) -o $(EXEC) $(OBJECTS) $(LDFLAGS)
 
